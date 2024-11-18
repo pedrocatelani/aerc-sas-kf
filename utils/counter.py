@@ -50,5 +50,5 @@ def aerc_count(decks: list):
             "delta_sasc_aercc": delta_sasc_arcc,
     })
 
-    with open("results.json", "w") as payload:
+    with open("sas_log.json", "w") as payload:
             json.dump(data, payload)
