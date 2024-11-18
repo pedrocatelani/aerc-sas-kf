@@ -33,6 +33,22 @@ def aerc_count(decks: list):
             }
         )
         print(ctrl)
+    delta_sasb_arcb = 0
+    delta_sasb_arcc = 0
+    delta_sasc_arcb = 0
+    delta_sasc_arcc = 0
+
+    for item in data:
+            delta_sasb_arcb += abs(item["sasb_aercb"] - item["sas"])
+            delta_sasb_arcc += abs(item["sasb_aercc"] - item["sas"])
+            delta_sasc_arcb += abs(item["sasc_aercb"] - item["sas"])
+            delta_sasc_arcc += abs(item["sasc_aercc"] - item["sas"])
+    data.append({
+            "delta_sasb_aercb": delta_sasb_arcb,
+            "delta_sasb_aercc": delta_sasb_arcc,
+            "delta_sasc_aercb": delta_sasc_arcb,
+            "delta_sasc_aercc": delta_sasc_arcc,
+    })
 
     with open("results.json", "w") as payload:
             json.dump(data, payload)
