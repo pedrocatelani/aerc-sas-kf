@@ -7,7 +7,7 @@ from utils.counter import aerc_count
 
 
 settings = ConfigParser()
-settings.read('config.ini')
+settings.read("config.ini")
 data = []
 with open("id.csv", mode="r", newline="") as id_file:
     ids = csv.reader(id_file)
