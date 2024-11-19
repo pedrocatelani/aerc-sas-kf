@@ -6,10 +6,14 @@ def parse_decks():
         data = json.load(payload)
 
     for deck in data:
+        houses = []
+        for house in deck["houses"]:
+             
+
         dc = {
             "name": deck["name"],
             "type": deck["deckType"],
-            "houses": deck["housesAndCards"],
+            "houses": houses,
             "synergies": deck["synergyDetails"]
         }
 
