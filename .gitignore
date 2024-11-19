@@ -2,5 +2,6 @@ config.ini
 test.py
 venv
 *__pycache__*
-decks.json
-results.json
+api_decks.json
+sas_log.json
+standard_decks.json
