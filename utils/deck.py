@@ -7,8 +7,15 @@ def parse_decks():
 
     for deck in data:
         houses = []
-        for house in deck["houses"]:
-             
+        for house in deck["housesAndCards"]:
+            house_dict = {
+                "name": house["house"],
+                "cards": []
+            }
+            for card in house["cards"]:
+                 house_dict["cards"].append([house["house"],card["cardTitle"]])
+            
+            houses.append(house_dict)
 
         dc = {
             "name": deck["name"],
