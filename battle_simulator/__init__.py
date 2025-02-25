@@ -23,7 +23,7 @@ class BattleSim:
     battle_round = 1
 
     from ._turn import create_deck_pool, draw, create_card_values
-    from ._battle import battle
+    from ._battle import battle, hand_comparison, house_choice
 
     def __init__(self, mode: str = "STANDARD"):
         if mode == "STANDARD":
