@@ -26,7 +26,7 @@ def draw(self, deck, max: int = 6):
 
 
 def create_card_values(self):
-    values = []
+    values = {}
     for house in self.deck_1["houses"]:
         ea = 0
         ac = 0
@@ -43,20 +43,19 @@ def create_card_values(self):
                 ep += syn["effectivePower"]
                 cp += syn["creatureProtection"]
                 dr += syn["disruption"]
-        values.append(
-            {
-                "house": name,
-                "expectedAmber": ea / 12,
-                "amberControl": ac / 12,
-                "creatureControl": cc / 12,
-                "effectivePower": ep / 12,
-                "creatureProtection": cp / 12,
-                "disruption": dr / 12,
-            }
-        )
+        values[name] = {
+            "house": name,
+            "expectedAmber": ea / 12,
+            "amberControl": ac / 12,
+            "creatureControl": cc / 12,
+            "effectivePower": ep / 12,
+            "creatureProtection": cp / 12,
+            "disruption": dr / 12,
+        }
+
     self.deck_1_values = values
 
-    values = []
+    values = {}
     for house in self.deck_2["houses"]:
         ea = 0
         ac = 0
@@ -73,15 +72,14 @@ def create_card_values(self):
                 ep += syn["effectivePower"]
                 cp += syn["creatureProtection"]
                 dr += syn["disruption"]
-        values.append(
-            {
-                "house": name,
-                "expectedAmber": ea / 12,
-                "amberControl": ac / 12,
-                "creatureControl": cc / 12,
-                "effectivePower": ep / 12,
-                "creatureProtection": cp / 12,
-                "disruption": dr / 12,
-            }
-        )
+        values[name] = {
+            "house": name,
+            "expectedAmber": ea / 12,
+            "amberControl": ac / 12,
+            "creatureControl": cc / 12,
+            "effectivePower": ep / 12,
+            "creatureProtection": cp / 12,
+            "disruption": dr / 12,
+        }
+        
     self.deck_2_values = values

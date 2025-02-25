@@ -18,6 +18,9 @@ class BattleSim:
     player_1_hand = []
     player_2_hand = []
 
+    player_1_disruption = 0
+    player_2_disruption = 0
+
     first_player = None
     deck_list = None
     battle_round = 1
