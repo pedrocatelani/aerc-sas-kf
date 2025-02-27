@@ -1,14 +1,73 @@
+
+
 def battle(self):
-    round = 1
+    points = [0, 0]
     self.create_deck_pool()
     self.create_card_values()
 
-    self.draw(1)
-    self.draw(2)
+    for i in range(0, self.rounds):
+        self.draw(1, self.get_chain(1))
+        self.draw(2, self.get_chain(2))
 
-    self.hand_comparison()
-    
-def hand_comparison(self):
+        p1, p2 = self.hand_comparison()
+        points[0] += p1
+        points[1] += p2
+    print(points)
+
+
+
+def hand_comparison(self) -> tuple:
+    str_1, str_2 = self.create_hand_strenght()
+
+    results_1 = [
+        str_1["amberControl"] + str_1["creatureProtection"] - str_2["creatureControl"],
+        str_1["creatureControl"] - str_2["creatureProtection"],
+        str_1["effectivePower"]
+        + str_1["creatureProtection"]
+        - str_2["effectivePower"]
+        - str_2["creatureProtection"],
+    ]
+    results_2 = [
+        str_2["amberControl"] + str_2["creatureProtection"] - str_1["creatureControl"],
+        str_2["creatureControl"] - str_1["creatureProtection"],
+        str_2["effectivePower"]
+        + str_2["creatureProtection"]
+        - str_1["effectivePower"]
+        - str_1["creatureProtection"],
+    ]
+    points_1 = 0
+    points_2 = 0
+    # print(results_1, results_2)
+    # print(str_1["expectedAmber"], str_2["expectedAmber"])
+
+    for i in range(0, 3):
+        if results_1[i] > str_2["expectedAmber"]:
+            points_1 += 1
+        else:
+            points_2 += 1
+
+        if results_2[i] > str_1["expectedAmber"]:
+            points_2 += 1
+        else:
+            points_1 += 1
+
+    return (points_1, points_2)
+
+
+def house_choice(self, deck):
+    hand = getattr(self, f"player_{deck}_hand")
+    aux = {}
+    for card in hand:
+        house = card[0]
+        if house in aux:
+            aux[house] += 1
+        else:
+            aux[house] = 1
+
+    return max(aux, key=aux.get)
+
+
+def create_hand_strenght(self) -> tuple:
     str_1 = {
         "expectedAmber": 0.0,
         "amberControl": 0.0,
@@ -42,18 +101,8 @@ def hand_comparison(self):
             str_2["effectivePower"] += self.deck_2_values[p_2]["effectivePower"]
             str_2["creatureProtection"] += self.deck_2_values[p_2]["creatureProtection"]
             self.player_1_disruption += self.deck_2_values[p_2]["disruption"]
-            
-    #(Cprotec > CCtrl), (CCtrl > EPower),  (EPower > Actrl),  (Actrl > EAmber)
-    
 
-def house_choice(self, deck):
-    hand = getattr(self, f"player_{deck}_hand")
-    aux = {}
-    for card in hand:
-        house = card[0]
-        if house in aux:
-            aux[house] += 1
-        else:
-            aux[house] = 1
+    self.discard_cards(p_1, 1)
+    self.discard_cards(p_2, 2)
 
-    return max(aux, key=aux.get)
+    return (str_1, str_2)
