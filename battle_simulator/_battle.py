@@ -7,8 +7,7 @@ def battle(self):
     self.draw(2)
 
     self.hand_comparison()
-
-
+    
 def hand_comparison(self):
     str_1 = {
         "expectedAmber": 0.0,
@@ -43,9 +42,8 @@ def hand_comparison(self):
             str_2["effectivePower"] += self.deck_2_values[p_2]["effectivePower"]
             str_2["creatureProtection"] += self.deck_2_values[p_2]["creatureProtection"]
             self.player_1_disruption += self.deck_2_values[p_2]["disruption"]
-
+            
     #(Cprotec > CCtrl), (CCtrl > EPower),  (EPower > Actrl),  (Actrl > EAmber)
-
     
 
 def house_choice(self, deck):
