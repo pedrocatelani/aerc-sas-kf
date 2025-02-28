@@ -80,20 +80,22 @@ def build_sequential(self):
     count = 1
     for deck1 in self.available_decks:
         house1 = self.available_decks[deck1][0]
-        
+
         for deck2 in self.available_decks:
             house2 = self.available_decks[deck2][1]
-            
+
             if house2 != house1:
                 for deck3 in self.available_decks:
                     house3 = self.available_decks[deck3][2]
-                    
-                    if house3 != house1 and house3 != house2:    
-                        if self.create_name(deck1, deck2, deck3, house1, house2, house3):
+
+                    if house3 != house1 and house3 != house2:
+                        if self.create_name(
+                            deck1, deck2, deck3, house1, house2, house3
+                        ):
                             count += 1
     self.create()
-                                   
-                
+
+
 def build_random(self):
     count = 0
     while count <= len(self.available_decks.keys()) * 1.375:
@@ -110,9 +112,9 @@ def build_random(self):
             if self.create_name(deck1, deck2, deck3, house1, house2, house3):
                 count += 1
     self.create()
-    
 
-def create_name(self, deck1, deck2, deck3, house1, house2, house3) -> bool: 
+
+def create_name(self, deck1, deck2, deck3, house1, house2, house3) -> bool:
     names = [f"{deck1}-{house1} ", f"{deck2}-{house2} ", f"{deck3}-{house3} "]
     names.sort()
     name = ""

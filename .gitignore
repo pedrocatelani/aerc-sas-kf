@@ -5,4 +5,5 @@ venv
 standard_decks.json
 sas_log.json
 api_decks.json
+battle_result.json
 aliance_decks.json

@@ -13,6 +13,8 @@ def create_deck_pool(self):
     self.deck_2_pool = pool_2.copy()
     self.deck_1_pool_game = pool_1.copy()
     self.deck_2_pool_game = pool_2.copy()
+    self.player_1_hand = []
+    self.player_2_hand = []
 
 
 def draw(self, deck, max: int = 6):
@@ -27,7 +29,7 @@ def draw(self, deck, max: int = 6):
         card = rd.choice(pool_game)
         hand.append(card)
         pool_game.remove(card)
-    
+
     if max != 6:
         if deck == 1:
             self.player_1_disruption -= 1
@@ -59,7 +61,7 @@ def get_chain(self, deck: int):
     for i in chain_list:
         if disruption >= i[0]:
             return i[1]
-        
+
 
 def create_card_values(self):
     values = {}
@@ -89,7 +91,7 @@ def create_card_values(self):
             "disruption": (dr / 12) * 1,
         }
 
-    self.deck_1_values = values
+    self.deck_1_values = values.copy()
 
     values = {}
     for house in self.deck_2["houses"]:
@@ -118,4 +120,4 @@ def create_card_values(self):
             "disruption": (dr / 12) * 1,
         }
 
-    self.deck_2_values = values
+    self.deck_2_values = values.copy()

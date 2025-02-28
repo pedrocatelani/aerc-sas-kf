@@ -59,5 +59,4 @@ class BattleSim:
         with open(deck_file, "r") as payload:
             self.deck_list = json.load(payload)
 
-        self.deck_1 = self.deck_list[0]
-        self.deck_2 = self.deck_list[1]
+

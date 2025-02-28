@@ -12,6 +12,10 @@ class Aliance:
     from ._builder import build, build_sequential, build_random, create, create_name
 
     def __init__(self, mode: str = "SEQUENTIAL"):
+        """
+        "mode" param can be "SEQUENTIAl" or "RANDOM".
+        """
+        
         self.mode = mode
         deck_file = "standard_decks.json"
 

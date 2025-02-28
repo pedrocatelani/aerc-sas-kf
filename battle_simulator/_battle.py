@@ -1,9 +1,7 @@
-
-
 def battle(self):
     points = [0, 0]
-    self.create_deck_pool()
     self.create_card_values()
+    self.create_deck_pool()
 
     for i in range(0, self.rounds):
         self.draw(1, self.get_chain(1))
@@ -12,8 +10,13 @@ def battle(self):
         p1, p2 = self.hand_comparison()
         points[0] += p1
         points[1] += p2
-    print(points)
 
+    if p1 > p2:
+        return (1, 0)
+    elif p2 > p1:
+        return (0, 1)
+    else:
+        return (1, 1)
 
 
 def hand_comparison(self) -> tuple:
