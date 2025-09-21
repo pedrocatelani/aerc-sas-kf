@@ -28,3 +28,4 @@ def parse_decks():
     
     with open("standard_decks.json", "w") as payload:
             json.dump(parsed_data, payload)
+

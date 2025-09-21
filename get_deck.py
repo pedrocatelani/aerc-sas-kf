@@ -24,7 +24,7 @@ with open("id.csv", mode="r", newline="") as id_file:
         else:
             print(response)
 
-        sleep(3)
+        sleep(2)
 
     add_dec(data)
     aerc_count(data)

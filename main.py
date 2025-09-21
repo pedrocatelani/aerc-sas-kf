@@ -7,10 +7,12 @@ from aliance import Aliance
 aliance = Aliance("SEQUENTIAL")
 aliance.build()
 
+# Confirmação
+input("\n-- Enter para rodar com estes decks...")
 
 # Instância da classe BattleSim, responsável por simular as batalhas.
 # Configurada para o tipo Aliança, com pesos padrões, e quantidade de rodadas por deck igual a 20.
-battle = BattleSim(mode="ALIANCE", rounds=20)
+battle = BattleSim(mode="ALIANCE", rounds=30)
 
 
 # Dicionário que guardará o número de vitórias

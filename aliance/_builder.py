@@ -72,6 +72,7 @@ def create(self):
         parsed_data.append(entry)
         x += 1
 
+    print(f"-- Builded {x} decks!")
     with open("aliance_decks.json", "w") as payload:
         json.dump(parsed_data, payload)
 
