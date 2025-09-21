@@ -1,0 +1,203 @@
+{
+    "name": "MODEL DECK - Joranhdeer, Eater of Duvida",
+    "type": "MODEL",
+    "houses": [
+        {
+            "name": "Ekwidon",
+            "parent": "Boring Batu of the Saloon",
+            "cards": [
+                [
+                    "Ekwidon",
+                    "De-escalation"
+                ],
+                [
+                    "Ekwidon",
+                    "High Street Churn"
+                ],
+                [
+                    "Ekwidon",
+                    "Hoist Operations"
+                ],
+                [
+                    "Ekwidon",
+                    "Hoist Operations"
+                ],
+                [
+                    "Ekwidon",
+                    "Security Detail"
+                ],
+                [
+                    "Ekwidon",
+                    "Ace Jonavan"
+                ],
+                [
+                    "Ekwidon",
+                    "Ace Jonavan"
+                ],
+                [
+                    "Ekwidon",
+                    "Cogg Miller"
+                ],
+                [
+                    "Ekwidon",
+                    "Distributor Jan\u014f\u014fnt"
+                ],
+                [
+                    "Ekwidon",
+                    "Distributor Jan\u014f\u014fnt"
+                ],
+                [
+                    "Ekwidon",
+                    "Gemcoat Vendor"
+                ],
+                [
+                    "Ekwidon",
+                    "Sandwyrm"
+                ]
+            ]
+        },
+        {
+            "name": "Geistoid",
+            "parent": "Boring Batu of the Saloon",
+            "cards": [
+                [
+                    "Geistoid",
+                    "All Hands on Deck"
+                ],
+                [
+                    "Geistoid",
+                    "All Hands on Deck"
+                ],
+                [
+                    "Geistoid",
+                    "Ghoul-keeping"
+                ],
+                [
+                    "Geistoid",
+                    "Haunting Deck"
+                ],
+                [
+                    "Geistoid",
+                    "Haunting Deck"
+                ],
+                [
+                    "Geistoid",
+                    "Veil of Ectoplasm"
+                ],
+                [
+                    "Geistoid",
+                    "Parabyte"
+                ],
+                [
+                    "Geistoid",
+                    "Parabyte"
+                ],
+                [
+                    "Geistoid",
+                    "Summoned Counsel"
+                ],
+                [
+                    "Geistoid",
+                    "Titan Apparition"
+                ],
+                [
+                    "Geistoid",
+                    "Wellstring"
+                ],
+                [
+                    "Geistoid",
+                    "Atomic Destabilizer"
+                ]
+            ]
+        },
+        {
+            "name": "Mars",
+            "parent": "Boring Batu of the Saloon",
+            "cards": [
+                [
+                    "Mars",
+                    "Harmonic Pack"
+                ],
+                [
+                    "Mars",
+                    "Intentional Discharge"
+                ],
+                [
+                    "Mars",
+                    "Kaboom!"
+                ],
+                [
+                    "Mars",
+                    "Phosphorus Blast"
+                ],
+                [
+                    "Mars",
+                    "Crystal Hive"
+                ],
+                [
+                    "Mars",
+                    "Cobalt Kapulet"
+                ],
+                [
+                    "Mars",
+                    "Donor Vox"
+                ],
+                [
+                    "Mars",
+                    "Dr. Xyloxxzlphrex"
+                ],
+                [
+                    "Mars",
+                    "Dr. Xyloxxzlphrex"
+                ],
+                [
+                    "Mars",
+                    "Number 612"
+                ],
+                [
+                    "Mars",
+                    "Number 612"
+                ],
+                [
+                    "Mars",
+                    "Brain Stem Antenna"
+                ]
+            ]
+        }
+    ],
+    "synergies": [
+        {
+            "house": "Ekwidon",
+            "cardName": "Ace Jonavan",
+            "synergies": [],
+            "expectedAmber": 5.334,
+            "amberControl": 3.483,
+            "creatureControl": 3.496,
+            "creatureProtection": 0.434,
+            "effectivePower": 19.523,
+            "disruption": 0.656
+        },
+        {
+            "house": "Geistoid",
+            "cardName": "All Hands on Deck",
+            "synergies": [],
+            "expectedAmber": 5.334,
+            "amberControl": 3.483,
+            "creatureControl": 3.496,
+            "creatureProtection": 0.434,
+            "effectivePower": 19.523,
+            "disruption": 0.656
+        },
+        {
+            "house": "Mars",
+            "cardName": "Kaboom!",
+            "synergies": [],
+            "expectedAmber": 5.334,
+            "amberControl": 3.483,
+            "creatureControl": 3.496,
+            "creatureProtection": 0.434,
+            "effectivePower": 19.523,
+            "disruption": 0.656
+        }
+    ]
+}
