@@ -32,7 +32,7 @@ def get_attributes(deck: object):
 
 
 # Instanciando a classe que cuidará das batalhas
-battle = BattleSim(mode="ALIANCE", rounds=101)
+battle = BattleSim(mode="ALIANCE", rounds=21)
 
 
 # Fetch do Deck modelo, gerado com base nos 901 alianças.
@@ -44,7 +44,7 @@ with open("model_deck.json", "r") as payload:
 wins_dict = {}
 
 # Loop de batalhas, onde, todos os decks lutam X vezes contra o deck modelo.
-battles = 45
+battles = 100
 count = 1
 for deck1 in range(0, len(battle.deck_list)):
     # Atribuição dos decks no objeto
@@ -59,7 +59,7 @@ for deck1 in range(0, len(battle.deck_list)):
 
     # Calculo dos vencedores
     wins = [0, 0]
-    for i in range(0, battles + 1):
+    for i in range(0, battles):
         wins1, wins2 = battle.battle()
 
         wins[0] += wins1
