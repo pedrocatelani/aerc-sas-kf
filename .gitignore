@@ -1,5 +1,6 @@
 config.ini
 test.py
+ts.py
 venv
 *__pycache__*
 standard_decks.json
