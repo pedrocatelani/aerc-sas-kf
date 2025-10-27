@@ -1,6 +1,6 @@
 import json
 
-from numpy import argsort
+from numpy import argsort, array
 
 from utils.get_atr import get_atr
 from utils.min_max import normalize_by_min_max
@@ -20,7 +20,7 @@ class GeneticAlgorithm:
         if weight:
             self.weight = weight
 
-    def create_deck_atr(self, file: str = "aliance_decks.json"):
+    def create_deck_atr(self, file: str = "standard_decks.json"):
         with open(file, "r") as load:
             data = json.load(load)
 
@@ -88,7 +88,7 @@ class GeneticAlgorithm:
                 ),
             }
 
-    def objective_function(self, atr: dict, weight: dict):
+    def objective_function(self, atr: dict, weight: dict) -> float:
         value = (
             (atr["expectedAmber"] ** weight["ea"])
             * (atr["amberControl"] ** weight["ac"])
@@ -96,14 +96,23 @@ class GeneticAlgorithm:
             * (atr["creatureProtection"] ** weight["cp"])
             * (atr["effectivePower"] ** weight["ep"])
             * (atr["disruption"] ** weight["dr"])
+        ) ** (
+            1
+            / (
+                weight["ea"]
+                + weight["ac"]
+                + weight["cc"]
+                + weight["cp"]
+                + weight["ep"]
+                + weight["dr"]
+            )
         )
 
-        return value
+        return value * 10
 
-    def evaluate(self):
+    def evaluate(self) -> array:
         self.values = []
-
-        # variavel auxiliar
+        original_decks = list(self.norm_decks_atr.values())
         v = []
 
         for k, d in self.norm_decks_atr.items():
@@ -113,6 +122,8 @@ class GeneticAlgorithm:
             v.append(deck_value)
 
         indexes = argsort(v)
+        self.ordered_population = [original_decks[i] for i in indexes]
         self.values = [self.values[i] for i in indexes]
+        v = [v[i] for i in indexes]
 
-        return self.values
+        return array(v)
