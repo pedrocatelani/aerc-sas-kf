@@ -46,7 +46,7 @@ def main_genetic_loop(weight: dict = None, generations: int = 50):
 
     # Loop principal
     ctrl = 0
-    gen.build_descendants(descencendants, ctrl)
+    gen.build_descendants(descencendants, ctrl, first=True)
     while ctrl < generations:
         gen.create_deck_atr("ga_currentgen_decks.json")
         print(">> Decks criados a partir do arquivo.")

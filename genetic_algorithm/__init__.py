@@ -208,7 +208,9 @@ class GeneticAlgorithm:
 
         return (first_descendant, second_descendant)
 
-    def build_descendants(self, build_guide: list, gen: int, file: str = None) -> None:
+    def build_descendants(
+        self, build_guide: list, gen: int, file: str = None, first: bool = False
+    ) -> None:
         # [{nome: [casas]}, {nome: [casas]}] --fomato esperado
         file_string = file if file else self.file
         deck_number = 1
@@ -236,9 +238,22 @@ class GeneticAlgorithm:
                         aux_houses[h["name"]] = h["cards"]
 
                     for house in v:
-                        new_deck["houses"].append(
-                            {"name": house, "progenitor": k, "cards": aux_houses[house]}
-                        )
+                        if first:
+                            new_deck["houses"].append(
+                                {
+                                    "name": house,
+                                    "progenitor": k,
+                                    "cards": [{"father": k}, *aux_houses[house]],
+                                }
+                            )
+                        else:
+                            new_deck["houses"].append(
+                                {
+                                    "name": house,
+                                    "progenitor": k,
+                                    "cards": aux_houses[house],
+                                }
+                            )
 
                         for syn in original_decks[k]["synergies"]:
                             if syn["house"] == house:
