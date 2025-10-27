@@ -1,6 +1,4 @@
 def normalize_by_min_max(cur_value, min_value, max_value):
-    min_max = (cur_value - min_value) / (max_value - min_value)
+    min_max = (cur_value - min_value + 0.001) / (max_value - min_value + 0.001)
 
-    value = (min_max + 0.01) / (1 + 0.01)
-
-    return value
+    return min_max
