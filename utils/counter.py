@@ -2,8 +2,10 @@ import json
 
 def aerc_count(decks: list):
     data = []
+    i = 1
     for deck in decks:
-        print(deck["name"])
+        print("{} --> {}".format(i, deck["name"]))
+        i += 1
 
         aerc_raw = 0
         aerc_complete = 0
@@ -32,7 +34,7 @@ def aerc_count(decks: list):
                 "sasc_aercc": sas_complete + aerc_complete,
             }
         )
-        print(ctrl)
+        # print(ctrl)
     delta_sasb_arcb = 0
     delta_sasb_arcc = 0
     delta_sasc_arcb = 0

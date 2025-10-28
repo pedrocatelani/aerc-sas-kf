@@ -17,5 +17,6 @@ class Selection:
         return 'n' selected individuals
         """
         progenitors = array([self.select(fitness) for _ in range(n)])
+
         print(progenitors)
         return self.population[progenitors]

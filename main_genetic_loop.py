@@ -1,5 +1,3 @@
-import numpy
-
 from genetic_algorithm import GeneticAlgorithm
 from selection._roulette import Roulette
 
@@ -7,7 +5,7 @@ from selection._roulette import Roulette
 # from selection._rankbased import RankBased
 
 
-def main_genetic_loop(weight: dict = None, generations: int = 50):
+def main_genetic_loop(weight: dict = None, generations: int = 0):
     # Instanciando a classe do GA
     w = {"ac": 2.12, "cc": 1.76, "cp": 13.3, "ep": 0.2612, "ea": 3.0, "dr": 1.5}
     gen = GeneticAlgorithm(w)

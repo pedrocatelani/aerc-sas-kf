@@ -1,6 +1,7 @@
 import json
 
 def parse_decks():
+    print("\n\n>> Iniciando tratativa de informações...\n")
     parsed_data = []
     with open("api_decks.json", "r") as payload:
         data = json.load(payload)
@@ -26,6 +27,10 @@ def parse_decks():
 
         parsed_data.append(dc)
     
+    print(">> Processo finalizado!\n\n")
+    print(">> Teste outras funções da main!!!\n")
+    print(">> python main.py --GA  <Genetic Algorithm>")
+    print(">> python main.py --BL  <Battle Loop>")
     with open("standard_decks.json", "w") as payload:
             json.dump(parsed_data, payload)
 

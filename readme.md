@@ -4,10 +4,13 @@
 
 ### Para rodar o projeto:
 
+-> Criar arquivo `config.ini`<br>
+-> contendo: `[USER] api_key=<sua_chave_api_dok>`
+
 -> `python -m venv venv`<br>
 -> `venv\scripts\activate`<br>
 -> `pip install -r requirements.txt`<br>
--> Rodar a função `parse_decks()` disponível na utils\deck.py.
+-> `python main.py --type fetch`
 
 # Feito graças a api oficial do Decks of Keyforge
 

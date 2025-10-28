@@ -35,4 +35,4 @@ class Roulette(Selection):
 
             i += 1
 
-        return i - 1
+        return i
