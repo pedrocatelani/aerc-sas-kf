@@ -13,6 +13,18 @@ class GeneticAlgorithm:
     file = ""
     weight = {"ac": 2.12, "cc": 1.76, "cp": 13.3, "ep": 0.2612, "ea": 3.0, "dr": 1.5}
     values = []
+    
+    #Nome do melhor e pior fitness
+    best_deck_name = None
+    worst_deck_name = None
+    
+    #Dicionário para armazenar os dados do melhor e piore fitness
+    best_deck_atr_norm = {}
+    worst_deck_atr_norm = {}
+    
+    #Valores do melhor e pior fitness da geração
+    best_fitness_deck = None
+    worst_fitness_deck = None
 
     def __init__(self, weight: dict = None, file: str = "standard_decks.json"):
         """
@@ -133,7 +145,20 @@ class GeneticAlgorithm:
         self.ordered_population = [original_decks[i] for i in indexes]
         self.values = [self.values[i] for i in indexes]
         v = [v[i] for i in indexes]
-
+        
+        #Coletando os dados do melhor e pior deck
+        
+        self.worst_fitness_deck = self.values[0]["value"]
+        self.worst_deck_name = self.values[0]["deck"]
+        self.worst_deck_atr = self.decks_atr[self.worst_deck_name].copy()
+        
+        self.best_fitness_deck = self.values[-1]["value"]
+        self.best_deck_name = self.values[-1]["deck"]
+        self.best_deck_atr = self.decks_atr[self.best_deck_name].copy()
+        
+        self.worst_deck_atr_norm = self.norm_decks_atr[self.worst_deck_name].copy()
+        self.best_deck_atr_norm = self.norm_decks_atr[self.best_deck_name].copy()
+        
         return array(v)
 
     def cross_shuffle(self, prog_1: str, prog_2: str, file: str = None) -> tuple:
